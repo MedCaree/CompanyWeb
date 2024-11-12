@@ -11,7 +11,7 @@ nav {
     align-items: center;
     background-color: #13215f;
     color: white;
-    padding: 20px;
+    padding: 15px;
     position: sticky;
     top: 0;
     left: 0; 
@@ -44,13 +44,13 @@ nav {
 
 
 .nav-right li {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 5px;
+    padding: 2px;
 }
 
 .nav-right a:hover {
