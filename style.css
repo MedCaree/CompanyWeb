@@ -156,14 +156,13 @@ nav button:hover {
     width: 100%;
 }
 
-
 .services-section {
     background-image: url(Images/bk.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 50vh; /* Increased height to allow for larger text */
+    height: 50vh; /* Adjusted height to allow space for the text */
     display: flex;
     justify-content: center; /* Horizontally center the text */
     align-items: center; /* Vertically center the text */
@@ -171,13 +170,58 @@ nav button:hover {
 }
 
 .services-text {
-    color: white; /* White text for contrast */
+    color: rgb(255, 255, 255); /* White text for contrast */
     font-size: 150px; /* Extremely large font size */
     font-weight: bold;
     text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9); /* Larger shadow for readability */
     padding: 30px 50px; /* Extra padding for large text */
     border-radius: 8px; /* Rounded corners for the background */
     text-align: center; /* Center-align the text inside the box */
+}
+
+.Lservices {
+    width: 100%;
+}
+
+.Lservices-section {
+    background-color: #003a6a;
+    width: 100%;
+    height: 60vh; /* Adjusted to provide more space for text and icon */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    position: relative;
+    padding: 20px;
+}
+
+.Lservices-text {
+    color: rgb(142, 151, 192);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9);
+    padding: 20px 40px; /* Adjusted padding to reduce space inside the text box */
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px; /* Reduced the bottom margin to bring text closer to the icon */
+    width: 80%; /* Ensure text container is not too wide */
+}
+
+.Lservices-section img {
+    width: 120px; /* Adjusted the size of the icon */
+    height: 120px; /* Ensure the height is proportional */
+    margin-top: 20px; /* Spacing between text and icon */
+    border-radius: 50%; /* Make the image circular */
+    border: 5px solid white; /* Add a white border around the icon for contrast */
+}
+
+.Lservices-section p {
+    font-size: 18px; /* Adjust font size for description */
+    color: white; /* White text for contrast */
+    text-align: center; /* Center-align the paragraph */
+    margin-top: 20px; /* Add some margin to ensure it's spaced from the icon */
+    width: 80%; /* Ensure the paragraph fits inside the container */
+    max-width: 800px; /* Optional: Prevent the text from being too wide */
 }
 
 .services-content {
@@ -216,16 +260,22 @@ nav button:hover {
         padding: 12px 25px; /* Adjust padding for mobile */
     }
 
-    .services-content h2 {
-        font-size: 28px;
+    .Lservices-section {
+        height: 70vh; /* Adjust height for smaller screens */
     }
 
-    .services-content p {
-        font-size: 16px;
+    .Lservices-text {
+        font-size: 16px; /* Adjust font size for mobile */
+        padding: 15px 25px; /* Adjust padding for mobile */
+        margin-bottom: 15px; /* Reduce space between text and icon on mobile */
+    }
+
+    .Lservices-section img {
+        width: 100px; /* Adjust the size of the icon on mobile */
+        height: 100px; /* Adjust height for mobile */
+        margin-top: 15px; /* Reduce the margin on mobile */
     }
 }
-
-
 
 .about {
     width: 100%;
