@@ -78,8 +78,8 @@ nav button:hover {
     background-color: #ff1a1a;
 }
 
-.home-section{
-    background-image: url(Images/cover.jpg);
+.home-section {
+    background-image: url(Images/bk.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,21 +87,23 @@ nav button:hover {
     height: calc(80vh - 99px);
     display: flex;
     align-items: center;
+    justify-content: center; /* Ensures content is centered horizontally */
     position: relative;
 }
-.home-content{
-    position: absolute;
-    left: -100%;
-    color: #ffffff;
-    transition: 1s ease-in-out;
+
+.home-content {
+    color: #ffffff; /* Text color */
+    text-align: center; /* Center the text horizontally */
+    font-size: 24px; /* Increase font size for better visibility */
+    padding-top: 20px; /* Adjust this value to move the text upwards or downwards */
 }
-.home-content h1{
-    font-size: 3.5rem;
+
+.home-content p {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove padding */
 }
-.home-content p{
-    font-size: 14px;
-    color: #ffffff;
-}
+
+
 
 .cont {
     display: flex;
@@ -109,13 +111,29 @@ nav button:hover {
     justify-content: center;
 }
 
+.applet-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    width: 18rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: scale(1.05);
+} 
 .card {
     position: relative; /* Enable absolute positioning for the title */
     margin-right: 5px;
     margin-bottom: 10px; /* Space between rows */
     height: 380px; /* Card height */
     width: 180px; /* Card width */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 8px; /* Rounded corners */
     border: 2px solid #f4f4f4; /* Card border */
     overflow: hidden; /* Prevent overflow */
     transition: flex-grow 0.3s ease, transform 0.3s ease; /* Transition for growth and scaling */
@@ -123,33 +141,6 @@ nav button:hover {
     align-items: center;
     justify-content: center;
    
-}
-
-.card img {
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Match border radius */
-    display: block; /* Prevent inline spacing issues */
-}
-
-.card:hover {
-    flex-grow: 2; /* Grow when hovered */
-    transform: scale(1.05); /* Slightly scale up */
-    border-color: #007BFF; /* Change border color on hover */
-}
-
-.title {
-    position: absolute; /* Position title absolutely */
-    bottom: 20px; /* Position slightly higher for better visibility */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center align */
-    color: white; /* White text color */
-    padding: 8px 12px; /* Add some padding */
-    border-radius: 5px; /* Slightly rounded corners */
-    font-size: 18px; /* Font size */
-    text-align: center; /* Center the text */
-    width: calc(100% - 20px); /* Full width minus padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
 .services {
@@ -201,7 +192,7 @@ nav button:hover {
     font-weight: bold;
     text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9);
     padding: 15px; /* Adjusted padding to reduce space inside the text box */
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
     margin-bottom: 2px; /* Reduced the bottom margin to bring text closer to the icon */
     width: 80%; /* Ensure text container is not too wide */
