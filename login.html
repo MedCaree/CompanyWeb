@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- Font Awesome for the eye icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="LOGO/Logo-removebg-preview.png" alt="Company Logo" class="logo">
+        <h2>Sign in</h2>
+        <form action="#" method="post">
+            <label for="username">STUDENT ID</label>
+            <input type="text" id="username" name="20231053" required>
+
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="password" id="password" name="katel" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+            </div>
+
+            <button type="button" class="login-button" onclick="window.location.href='app.html'">Log In</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript function to toggle password visibility and icon
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.querySelector(".toggle-password");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash"); // Switch icon to 'hide'
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye"); // Switch icon back to 'show'
+            }
+        }
+    </script>
+</body>
+</html>

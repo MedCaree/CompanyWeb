@@ -414,13 +414,6 @@ nav button:hover {
     border: none; /* Remove default border */
 }
 
-.copyright{
-    padding: 20px;
-    text-align: center;
-    background-color: #13215f;
-    color: rgb(255, 255, 255);
-}
-
 .contact {
     width: 100%;
 }
@@ -482,4 +475,11 @@ nav button:hover {
     .contact-content p {
         font-size: 16px;
     }
+}
+
+.copyright{
+    padding: 20px;
+    text-align: center;
+    background-color: #13215f;
+    color: rgb(255, 255, 255);
 }
