@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #13215f;
+    color: white;
+    padding: 17px;
+    position: sticky;
+    top: 0;
+    left: 0; 
+    z-index: 111;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a.active {
+    background-color: rgb(2, 2, 2);
+    color: rgb(245, 244, 244);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.nav-right li {
+    margin-right: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 2px;
+}
+
+.nav-right a:hover {
+    background-color:#5e6cad;
+    border-radius: 4px;
+}
+
+nav input {
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+nav button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+nav button:hover {
+    background-color: #ff1a1a;
+}
+
+.home-section {
+    background-image: url(https://wallpapercave.com/wp/wp5483326.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: calc(80vh - 99px);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures content is centered horizontally */
+    position: relative;
+}
+
+.home-content {
+    color: #ffffff; /* Text color */
+    text-align: center; /* Center the text horizontally */
+    font-size: 24px; /* Increase font size for better visibility */
+    padding-top: 20px; /* Adjust this value to move the text upwards or downwards */
+}
+
+.home-content p {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove padding */
+}
+.Lservices-section {
+    background-color: #003a6a;
+    width: 100%;
+    height: 60vh; /* Adjusted height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    position: relative;
+    padding: 20px;
+}
+
+.Lservices-section > div {
+    display: flex;
+    align-items: center; /* Vertically align the text and image */
+}
+
+.Lservices-text {
+    color: rgb(205, 209, 230);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9);
+    padding: 15px; /* Adjust padding */
+    border-radius: 10px;
+    text-align: left; /* Left-align the text */
+    margin-right: 20px; /* Space between the text and the icon */
+    width: 60%; /* Adjusted width for the text */
+}
+
+.Lservices-image {
+    display: flex;
+    align-items: center;
+}
+
+.Lservices-section img {
+    width: 250px; /* Icon size */
+    height: 250px;
+    border-radius: 20%; /* Circular icon */
+    border: 5px solid #13215f; /* White border */
+}
+
+.Lservices-section img + p {
+    color: rgb(241, 236, 231);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Make the select element wider based on content */
+#appletSearchBar, #moodSelector {
+    font-size: 1.2rem; /* Larger text */
+    padding: 10px 15px; /* More padding for better interaction */
+    height: 45px; /* Set height */
+    width: 100%; /* Make the dropdown take the full width available */
+    max-width: 400px; /* Limit the max width to prevent it from being too wide */
+}
+
+/* Make the options text larger */
+#appletSearchBar option, #moodSelector option {
+    font-size: 1.2rem; /* Larger option text */
+    padding: 10px; /* More space in the options */
+}
+
+/* Optional: To make the entire dropdown section bigger */
+.input-group select {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+    height: 45px;
+    max-width: 500px; /* Optional: Adjust max-width for the dropdown */
+}
+
+.input-group button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+/* Custom button color: Darker blue for Save Mood button */
+#saveMood {
+    background-color: #0069d9;
+    color: white;
+  }
+
+  #saveMood:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+  }
+
+  /* Custom button color: Blue for Clear Mood Log button */
+  #clearLog {
+    background-color: #007bff;
+    color: white;
+  }
+
+  #clearLog:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+  }
+
+  /* Custom button color: Blue for Delete button */
+  .btn-delete {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .btn-delete:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+  }
+
+  /* Optional: Style for the fade-in effect */
+  .mood-log-entry {
+    transition: all 0.3s ease-in-out;
+  }
+  .fade-enter {
+    opacity: 0;
+  }
+  .fade-enter-active {
+    opacity: 1;
+  }
+
+  
+.copyright{
+    padding: 20px;
+    text-align: center;
+    background-color: #13215f;
+    color: rgb(255, 255, 255);
+}

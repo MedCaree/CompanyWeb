@@ -143,6 +143,79 @@ nav button:hover {
    
 }
 
+.highlights-section {
+    width: 100%;
+    height: 60vh; /* Adjusted height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    position: relative;
+    padding: 20px;
+}
+
+.highlights-section > div {
+    display: flex;
+    align-items: center; /* Vertically align the text and image */
+}
+
+.highlights-text {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9);
+    padding: 15px; /* Adjust padding */
+    border-radius: 10px;
+    text-align: left; /* Left-align the text */
+    margin-right: 20px; /* Space between the text and the icon */
+    width: 60%; /* Adjusted width for the text */
+}
+
+.highlights-image {
+    display: flex;
+    align-items: center;
+}
+
+.highlights-section img {
+    width: 450px; /* Icon size */
+    height: 350px;
+    border: 5px solid #13215f; /* White border */
+}
+
+.highlights-section img + p {
+    color: rgb(241, 236, 231);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Add spacing between galleries */
+}
+
+.image-container {
+    flex: 1;
+    margin: 0 10px;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    height: 350px; /* Fixed height */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%; /* Set height to fill container */
+    object-fit: cover; /* Ensure images cover the container without distortion */
+    transition: transform 0.3s; /* Smooth zoom effect */
+    border: 5px solid #13215f; /* White border */
+
+}
+
+.image-container:hover img {
+    transform: scale(1.05); /* Zoom on hover */
+}
+
 .services {
     width: 100%;
 }
@@ -187,7 +260,7 @@ nav button:hover {
 }
 
 .Lservices-text {
-    color: rgb(142, 151, 192);
+    color: rgb(220, 221, 226);
     font-size: 20px;
     font-weight: bold;
     text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9);
@@ -199,11 +272,11 @@ nav button:hover {
 }
 
 .Lservices-section img {
-    width: 120px; /* Adjusted the size of the icon */
-    height: 120px; /* Ensure the height is proportional */
+    width: 240px; /* Adjusted the size of the icon */
+    height: 220px; /* Ensure the height is proportional */
     margin-top: 20px; /* Spacing between text and icon */
     border-radius: 50%; /* Make the image circular */
-    border: 5px solid white; /* Add a white border around the icon for contrast */
+    border: 5px solid #13215f; /* White border */
 }
 
 .Lservices-section p {

@@ -14,7 +14,6 @@ class VotingApp {
         this.updateUserActions(); // Update action buttons visibility
 
         this.initializeActionButtons();
-
     }
 
     initializeActionButtons() {
@@ -34,7 +33,6 @@ class VotingApp {
         });
     }
     
-
     initializeForm() {
         document.getElementById('voteForm').addEventListener('submit', (event) => {
             this.handleVote(event);
@@ -118,23 +116,24 @@ class VotingApp {
         const data = labels.map(option => this.votes[option] || 0);
 
         if (this.chart) {
-            this.chart.destroy();
+            this.chart.data.datasets[0].data = data;
+            this.chart.update();
+        } else {
+            this.chart = new Chart(this.ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Votes',
+                        data: data,
+                        backgroundColor: this.colors,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                }
+            });
         }
-
-        this.chart = new Chart(this.ctx, {
-            type: 'pie',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Votes',
-                    data: data,
-                    backgroundColor: this.colors,
-                }]
-            },
-            options: {
-                responsive: true,
-            }
-        });
     }
 
     updateUserActions() {
@@ -151,7 +150,7 @@ class VotingApp {
 
 document.addEventListener('DOMContentLoaded', () => {
     const ctx = document.getElementById('myChart').getContext('2d');
-    fetch('json/app.json')
+    fetch('json/app.json')  // Ensure this path is correct and the file exists
         .then(response => response.json())
         .then(data => {
             const app = new VotingApp(ctx, data);
