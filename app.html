@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style1.css">
+    
+    <!-- Include Bootstrap CSS from CDN -->
+   
+  </head>
+  <body>
+
+     <!-- Navigation Menu -->
+     <nav>
+        <ul class="nav-left">
+            <li>
+                <div class="header-Left">
+                    <div class="dropdown">
+                        <a href="#logo" id="logoName">EMO</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="nav-right">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#highlights">Highlights</a></li>
+            <li><a class="dropdown-item" href="#entries">Entries</a></li>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" id="appletSearchBar" placeholder="Search..." aria-label="Search">
+            </form>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="home">
+        <div class="home-section" id="home">
+            <div class="home-content">
+                <i>"Emotions are the whispers of the soul—listen closely and track their journey."</i>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="Lservices-section" id="highlights">
+            <div class="Lservices-text">
+                Emotions shape how we feel and act every day. Emotional states have a profound effect on how
+                we react to situations. According to a study by Gross and John (2003), individuals who are 
+                aware of and able to regulate their emotions tend to have better interpersonal relationships 
+                and more adaptive coping strategies. This suggests that emotional states not only affect how 
+                we feel internally but also shape how we respond to external situations, such as schoolwork, 
+                social interactions, or stress.
+            </div>
+            <div class="Lservices-image">
+                <img src="https://th.bing.com/th/id/R.b0a49ab4044d712899b022e7c7b464f6?rik=E0v5eIrvUFH%2faw&riu=http%3a%2f%2fclipart-library.com%2fimages%2f8TAbXgn7c.jpg&ehk=qgR%2fuHX7TQ0ydcPosXb7EiI2gj3t1wd10wdI4bb%2fXEI%3d&risl=&pid=ImgRaw&r=0" alt="Emotional Well-Being">
+            </div>
+        </div>
+    </section>
+    
+   <section>
+    <div class="container mt-5" id="entries">
+      <h1 class="mb-3">How are you?</h1>
+
+      <!-- Mood Selection Section -->
+      <div class="input-group mb-3">
+        <select id="moodSelector" class="custom-select">
+          <option selected>Choose..</option>
+          <option value="Happy">Happy</option>
+          <option value="Sad">Sad</option>
+          <option value="Proud">Proud</option>
+          <option value="Nervous">Nervous</option>
+          <option value="Tired">Tired</option>
+          <option value="Disappointed">Disappointed</option>
+          <option value="Scared">Scared</option>
+          <option value="Confused">Confused</option>
+          <option value="Excited">Excited</option>
+        </select>
+        <div class="input-group-append">
+          <button id="saveMood" class="btn btn-outline-secondary">
+            Save Mood
+          </button>
+        </div>
+      </div>
+
+      <!-- Feedback Message -->
+      <div id="feedbackMessage" class="mb-3" style="display: none;"></div>
+
+      <!-- Mood Log Section -->
+      <div id="moodLog" class="mt-3"></div>
+
+      <!-- Clear Mood Log Button -->
+      <div class="mt-3">
+        <button id="clearLog" class="btn btn-danger">Clear Mood Log</button>
+      </div>
+
+      <!-- Mood Bar Chart Section -->
+      <div id="chart-container" class="mt-5">
+        <h3>Mood Statistics</h3>
+        <canvas id="moodChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      // Initialize mood counts
+      const moodCounts = {
+        Happy: 0,
+        Sad: 0,
+        Proud: 0,
+        Nervous: 0,
+        Tired: 0,
+        Disappointed: 0,
+        Scared: 0,
+        Confused: 0,
+        Excited: 0,
+      };
+
+      // Initialize chart
+      const ctx = document.getElementById('moodChart').getContext('2d');
+      const moodLabels = Object.keys(moodCounts);
+      const moodColors = [
+        '#4caf50', '#f44336', '#2196f3', '#ffeb3b', '#9c27b0',
+        '#ff9800', '#03a9f4', '#e91e63', '#cddc39'
+      ];
+
+      let moodChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: moodLabels,
+          datasets: [{
+            label: 'Mood Count',
+            data: Object.values(moodCounts),
+            backgroundColor: moodColors,
+            borderColor: moodColors,
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // Event listener to save mood
+      document.getElementById('saveMood').addEventListener('click', function () {
+        const moodSelector = document.getElementById('moodSelector');
+        const mood = moodSelector.value;
+        const feedbackMessage = document.getElementById('feedbackMessage');
+
+        // Data validation: Check if a valid mood is selected
+        if (!mood || mood === "" || moodSelector.selectedIndex === 0) {
+          alert("Please select a valid mood before saving.");
+          return;
+        }
+
+        const date = new Date();
+        const dateTime = date.toLocaleString(); // Captures current date and time
+
+        // Construct the mood entry
+        const moodEntry = { mood, dateTime };
+
+        // Fetch existing mood log from localStorage, or initialize an empty array if none exists
+        let moodLog = JSON.parse(localStorage.getItem('moodLog')) || [];
+
+        // Add the new mood entry to the mood log
+        moodLog.push(moodEntry);
+
+        // Save the updated mood log to localStorage
+        localStorage.setItem('moodLog', JSON.stringify(moodLog));
+
+        // Update mood count for chart
+        moodCounts[mood]++;
+        moodChart.data.datasets[0].data = Object.values(moodCounts);
+        moodChart.update(); // Update the chart
+
+        // Provide feedback and display the updated mood log
+        feedbackMessage.innerHTML = `Mood "${mood}" saved successfully at ${dateTime}`;
+        feedbackMessage.style.display = 'block';
+        setTimeout(() => { feedbackMessage.style.display = 'none'; }, 3000);
+
+        // Refresh the mood log display
+        displayMoodLog();
+      });
+
+      // Display mood log
+      function displayMoodLog() {
+        let moodLog = JSON.parse(localStorage.getItem('moodLog')) || [];
+        const moodLogContainer = document.getElementById('moodLog');
+        moodLogContainer.innerHTML = ''; // Clear existing entries
+
+        moodLog.forEach((entry, index) => {
+          const entryDiv = document.createElement('div');
+          entryDiv.classList.add('alert', 'alert-primary', 'd-flex', 'justify-content-between', 'align-items-center', 'mood-log-entry', 'fade-enter');
+          entryDiv.innerHTML = `<strong>Mood:</strong> ${entry.mood} <br> <strong>Time:</strong> ${entry.dateTime}`;
+
+          // Delete button with custom blue styling
+          const deleteBtn = document.createElement('button');
+          deleteBtn.innerHTML = 'Delete';
+          deleteBtn.classList.add('btn', 'btn-delete', 'btn-sm');
+          deleteBtn.addEventListener('click', function () { deleteMood(index); });
+          entryDiv.appendChild(deleteBtn);
+
+          moodLogContainer.appendChild(entryDiv);
+
+          // Add fade-in effect
+          setTimeout(() => entryDiv.classList.add('fade-enter-active'), 100);
+        });
+      }
+
+      // Delete mood entry
+      function deleteMood(index) {
+        let moodLog = JSON.parse(localStorage.getItem('moodLog')) || [];
+        const deletedMood = moodLog[index].mood;
+        moodLog.splice(index, 1); // Remove the mood entry at the specified index
+
+        // Update mood count for chart
+        moodCounts[deletedMood]--;
+        moodChart.data.datasets[0].data = Object.values(moodCounts);
+        moodChart.update(); // Update the chart
+
+        localStorage.setItem('moodLog', JSON.stringify(moodLog)); // Update localStorage
+        displayMoodLog(); // Refresh the displayed mood log
+      }
+
+      // Clear all mood log entries
+      document.getElementById('clearLog').addEventListener('click', function () {
+        if (confirm("Are you sure you want to clear all mood entries?")) {
+          localStorage.removeItem('moodLog');
+          for (let mood in moodCounts) {
+            moodCounts[mood] = 0; // Reset all mood counts
+          }
+          moodChart.data.datasets[0].data = Object.values(moodCounts);
+          moodChart.update(); // Update the chart
+          displayMoodLog(); // Refresh the displayed mood log after clearing
+        }
+      });
+
+      // Display mood log on initial load
+      document.addEventListener('DOMContentLoaded', function () {
+        displayMoodLog();
+        // Initialize mood counts from localStorage
+        let moodLog = JSON.parse(localStorage.getItem('moodLog')) || [];
+        moodLog.forEach(entry => {
+          moodCounts[entry.mood]++;
+        });
+        moodChart.data.datasets[0].data = Object.values(moodCounts);
+        moodChart.update(); // Update the chart
+      });
+    </script>
+</section>
+
+    <br>
+   <div class="Lservices-section" id="services">
+    <div class="Lservices-text">
+        "Our platform seamlessly combines personalized emotional tracking, real-time insights,
+         and supportive resources to help students manage their mental health. By integrating 
+         data-driven solutions and fostering a culture of empathy, we ensure every student has 
+         the tools and support they need to thrive academically, socially, and emotionally."
+    </div>
+   </div>
+   <br>
+
+    <div class="copyright"> 
+        <p>All Rights Reserved 2024</p>
+    </div>
+
+  </body>
+</html>
