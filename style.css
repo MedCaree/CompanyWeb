@@ -247,7 +247,7 @@ nav button:hover {
 .Lservices-section {
     background-color: #003a6a;
     width: 100%;
-    height: 60vh; /* Adjusted to provide more space for text and icon */
+    height: 100vh; /* Adjusted to provide more space for text and icon */
     display: flex;
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Vertically center content */
@@ -328,7 +328,7 @@ nav button:hover {
     .Lservices-text {
         font-size: 16px; /* Adjust font size for mobile */
         padding: 15px 25px; /* Adjust padding for mobile */
-        margin-bottom: 15px; /* Reduce space between text and icon on mobile */
+        margin-bottom: 20px; /* Reduce space between text and icon on mobile */
     }
 
     .Lservices-section img {
@@ -354,6 +354,32 @@ nav button:hover {
     justify-content: center; /* Horizontally center the text */
     align-items: center; /* Vertically center the text */
     position: relative; /* Allows the text container to be positioned correctly */
+}
+
+.team {
+    display: flex; /* Use flexbox to align images side by side */
+    justify-content: center; /* Center the images horizontally */
+    gap: 20px;
+}
+.team-member {
+    text-align: center;
+}
+
+.team-img {
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    min-width: 150px; /* Minimum width */
+    min-height: 150px; /* Minimum height */
+    max-width: 200px; /* Optional: cap the max size */
+    max-height: 200px; /* Optional: cap the max size */
+    object-fit: cover; /* Ensures images are not distorted */
+    border-radius: 50%; /* Optional: make images circular */
+}
+
+.team-member {
+    margin: 10px; /* Space between images */
+    text-align: center; /* Center text under images */
+
 }
 .about-text {
     color: rgb(255, 255, 255); /* White text for contrast */
@@ -510,14 +536,15 @@ nav button:hover {
     text-align: center; /* Center-align the text inside the box */
 }
 .contact-content {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #fff;
-    color: #333;
-    width: 80%; /* Match the width of the line (80%) */
-    margin: 0 auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background-color: #003a6a;
+    width: 100%;
+    height: 60vh; /* Adjusted to provide more space for text and icon */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    position: relative;
+    padding: 20px;
 }
 
 .contact-content h2 {
@@ -526,12 +553,18 @@ nav button:hover {
 }
 
 .contact-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    width: 100%; /* Make the paragraph width match the parent container */
-    margin: 0 auto;
+    background-color: #003a6a;
+    width: 100%;
+    min-height: 60vh; /* Use min-height for flexibility */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    position: relative;
+    padding: 20px;
+    color: white; /* Ensure text is readable on dark background */
 }
+
 
 @media (max-width: 768px) {
     .contact-section {
