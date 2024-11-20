@@ -190,7 +190,7 @@ nav button:hover {
 
 .gallery {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 20px; /* Add spacing between galleries */
 }
 
@@ -205,7 +205,7 @@ nav button:hover {
 
 .image-container img {
     width: 100%;
-    height: 100%; /* Set height to fill container */
+    height: 90%; /* Set height to fill container */
     object-fit: cover; /* Ensure images cover the container without distortion */
     transition: transform 0.3s; /* Smooth zoom effect */
     border: 5px solid #13215f; /* White border */
@@ -247,13 +247,13 @@ nav button:hover {
 .Lservices-section {
     background-color: #003a6a;
     width: 100%;
-    height: 100vh; /* Adjusted to provide more space for text and icon */
+    height: 70vh; /* Adjusted to provide more space for text and icon */
     display: flex;
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Vertically center content */
     align-items: center; /* Horizontally center content */
     position: relative;
-    padding: 20px;
+    padding: 15px;
 }
 
 .Lservices-text {
@@ -355,32 +355,28 @@ nav button:hover {
     align-items: center; /* Vertically center the text */
     position: relative; /* Allows the text container to be positioned correctly */
 }
-
 .team {
     display: flex; /* Use flexbox to align images side by side */
     justify-content: center; /* Center the images horizontally */
-    gap: 20px;
+    gap: 20px; /* Space between team members */
 }
+
 .team-member {
     text-align: center;
 }
 
 .team-img {
-    width: auto; /* Maintain aspect ratio */
-    height: auto; /* Maintain aspect ratio */
-    min-width: 150px; /* Minimum width */
-    min-height: 150px; /* Minimum height */
-    max-width: 200px; /* Optional: cap the max size */
-    max-height: 200px; /* Optional: cap the max size */
-    object-fit: cover; /* Ensures images are not distorted */
-    border-radius: 50%; /* Optional: make images circular */
+    width: 250px; /* Set a fixed width for all images */
+    height: 250px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the images are not distorted */
+    border-radius: 50%; /* Make the images circular */
 }
 
 .team-member {
-    margin: 10px; /* Space between images */
-    text-align: center; /* Center text under images */
-
+    margin: 10px; /* Space between team members */
+    text-align: center; /* Center the text under the images */
 }
+
 .about-text {
     color: rgb(255, 255, 255); /* White text for contrast */
     font-size: 150px; /* Extremely large font size */
