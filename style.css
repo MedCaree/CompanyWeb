@@ -143,6 +143,7 @@ nav button:hover {
    
 }
 
+
 .highlights-section {
     width: 100%;
     height: 60vh; /* Adjusted height */
@@ -188,6 +189,7 @@ nav button:hover {
     margin-top: 10px;
 }
 
+
 .gallery {
     display: flex;
     justify-content: space-evenly;
@@ -215,6 +217,7 @@ nav button:hover {
 .image-container:hover img {
     transform: scale(1.05); /* Zoom on hover */
 }
+
 
 .services {
     width: 100%;
@@ -337,6 +340,8 @@ nav button:hover {
         margin-top: 15px; /* Reduce the margin on mobile */
     }
 }
+
+
 
 .about {
     width: 100%;
