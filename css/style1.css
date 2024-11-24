@@ -78,75 +78,101 @@ nav button:hover {
     background-color: #ff1a1a;
 }
 
-.home-section {
-    background-image: url(Images/bk1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: calc(80vh - 99px);
-    display: flex;
+.quotes {
+    padding: 10px;
+}
+
+.quotes-holder{
+    background-color: #b6b0eb;  /* Light gray background */
+    padding: 20px;              /* Space inside the box */
+    border-radius: 10px;        /* Rounded corners for a smooth look */
+    border: 2px solid #ccc;     /* Light border around the box */
+    max-width: 500px;           /* Limit the width */
+    max-height: 1000px;
+    margin: 20px auto;  
+}
+
+.generate button{
+    justify-content: center;
     align-items: center;
-    justify-content: center; /* Ensures content is centered horizontally */
-    position: relative;
-}
-
-.home-content {
-    color: #ffffff; /* Text color */
-    text-align: center; /* Center the text horizontally */
-    font-size: 24px; /* Increase font size for better visibility */
-    padding-top: 20px; /* Adjust this value to move the text upwards or downwards */
-}
-
-.home-content p {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove padding */
-}
-.Lservices-section {
-    background-color: #003a6a;
-    width: 100%;
-    height: 60vh; /* Adjusted height */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    position: relative;
-    padding: 20px;
-}
-
-.Lservices-section > div {
-    display: flex;
-    align-items: center; /* Vertically align the text and image */
-}
-
-.Lservices-text {
-    color: rgb(205, 209, 230);
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9);
-    padding: 15px; /* Adjust padding */
     border-radius: 10px;
-    text-align: left; /* Left-align the text */
-    margin-right: 20px; /* Space between the text and the icon */
-    width: 60%; /* Adjusted width for the text */
+}
+.generate button:hover {
+    background-color: #0069d9;
 }
 
-.Lservices-image {
-    display: flex;
+.textMessage{
+    justify-content: center;
     align-items: center;
 }
-
-.Lservices-section img {
-    width: 250px; /* Icon size */
-    height: 250px;
-    border-radius: 20%; /* Circular icon */
-    border: 5px solid #13215f; /* White border */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-auto-rows: auto; /* Allows cards to adjust their heights based on content */
 }
 
-.Lservices-section img + p {
-    color: rgb(241, 236, 231);
-    font-weight: bold;
+/* Individual card styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     text-align: center;
-    margin-top: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Ensures the content stacks vertically */
+    justify-content: space-between; /* Ensures spacing between content and button */
+}
+
+/* Styling for images inside the cards */
+.card img {
+    width: 100%;
+    height: 150px; /* Automatically adjusts height to maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 10px; /* Optional: Add rounded corners for aesthetics */
+}
+
+/* Content styling for the cards */
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Makes sure the content fills the available space */
+}
+
+.card-content h3 {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 12px;
+    margin: 5px 0;
+    flex-grow: 1; /* Allows the paragraph to take up remaining space */
+}
+
+/* Styling for the button */
+.card-content a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    padding: 8px 15px; /* Increased padding for better click area */
+    border-radius: 4px;
+    font-size: 14px; /* Slightly larger font size */
+    text-align: center;
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s ease;
+}
+
+.card-content a:hover {
+    background-color: #0056b3;
 }
 
 

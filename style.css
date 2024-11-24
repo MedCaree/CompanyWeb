@@ -190,6 +190,31 @@ nav button:hover {
 }
 
 
+.Ahighlights-section {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    position: relative;
+    padding: 20px;
+}
+
+.Ahighlights-section > div {
+    display: flex;
+    align-items: center; /* Vertically align the text and image */
+}
+
+.Ahighlights-text {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    width: 80%; /* Match the width of the line (80%) */
+    margin: 0 auto;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .gallery {
     display: flex;
     justify-content: space-evenly;
